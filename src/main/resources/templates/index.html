@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+    <div class="menu-logo-signin">
+        <div class="logo">
+            <img th:src="@{/caravanas}" alt="Logo de GuayraCamp">
+        </div>
+        <div class="menu">
+            <ul class="lista-menu">
+                <li>
+                    <a th:href="@{/autocaravanas}">Autocaravanas</a>
+                </li>
+                <li>
+                    <a th:href="@{/campers}">Campers</a>
+                </li>
+                <li>
+                    <a th:href="@{/tiendas}">Tiendas de campaña</a>
+                </li>
+            </ul>
+        </div>
+        <div class="login">
+            <a th:href="@{/login}">!Identificate!</a>
+        </div>
+    </div>
+    
+</body>
+</html>
