@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/estilos/estilos.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Pacifico&display=swap" rel="stylesheet">
     <title th:text="${titulo}"></title>
 </head>
+
 <body>
-    <div class="menu-logo-signin">
+    <div class="menu-logo-login">
         <div class="logo">
-            <img th:src="@{/caravanas}" alt="Logo de GuayraCamp">
+            <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="Logo de GuayraCamp"></a>
         </div>
         <div class="menu">
             <ul class="lista-menu">
-                <li>
-                    <a th:href="@{/autocaravanas}">Autocaravanas</a>
-                </li>
-                <li>
-                    <a th:href="@{/campers}">Campers</a>
-                </li>
-                <li>
-                    <a th:href="@{/tiendas}">Tiendas de campaña</a>
-                </li>
+                <a th:href="@{/autocaravanas}">
+                    <li>
+                        Autocaravanas
+                    </li>
+                </a>
+                <a th:href="@{/campers}">
+                    <li>
+                        Campers
+                    </li>
+                </a>
+                <a th:href="@{/tiendas}">
+                    <li>Tiendas de campaña</li>
+                </a>
             </ul>
         </div>
         <div class="login">
-            <a th:href="@{/login}">!Identificate!</a>
+            <div class="enlace_area_personal">
+                <a th:href="@{/login}">Área personal</a>
+            </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
