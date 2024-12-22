@@ -8,38 +8,66 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+    <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
     <title th:text="${titulo}"></title>
 </head>
 
 <body>
-    <div class="menu-logo-login">
-        <div class="logo">
-            <a th:href="@{/}"><img th:src="@{/img/logo.png}" alt="Logo de GuayraCamp"></a>
+    <div class="contenedor">
+
+        <nav class="navbar navbar-expand-lg navbar-dark menu-logo-login">
+            <div class="container-fluid">
+                <a class="navbar-brand" th:href="@{/}">
+                    <h1 class="titulo-nav">GuayraCamp</h1>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav menu">
+                        <a class="nav-link lista-menu" aria-current="page" th:href="@{/autocaravanas}">Autocaravanas</a>
+                        <a class="nav-link lista-menu" th:href="@{/campers}">Campers</a>
+                        <a class="nav-link lista-menu" th:href="@{/tiendas}">Tiendas</a>
+                        <a class="nav-link lista-menu" th:href="@{/login}">Área personal</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+		<div class="cabecera">
+
         </div>
-        <div class="menu">
-            <ul class="lista-menu">
-                <a th:href="@{/autocaravanas}">
-                    <li>
-                        Autocaravanas
-                    </li>
-                </a>
-                <a th:href="@{/campers}">
-                    <li>
-                        Campers
-                    </li>
-                </a>
-                <a th:href="@{/tiendas}">
-                    <li>Tiendas de campaña</li>
-                </a>
-            </ul>
-        </div>
-        <div class="login">
-            <div class="enlace_area_personal">
-                <a th:href="@{/login}">Área personal</a>
+
+        <div class="contenido">
+            
+            <div class="cabecera-info">
+                <img th:src="@{/img/camping-tiendas.png}" class="img-fluid img-cabecera-info img-izquierda" alt="Cabecera de GuayraCamp con autocaravanas, campers y tiendas de campaña.">
+                <p>
+                    Vive una experiencia única en plena naturaleza. Disfruta de la tranquilidad y la libertad de alojarte en una de nuestras cómodas parcelas para tiendas de campaña, 
+                    rodeado de paisajes impresionantes. Despierta con el canto de los pájaros, siente la brisa fresca y relájate al aire libre. En nuestro camping, 
+                    tendrás todo lo necesario para una estancia agradable, con instalaciones limpias y bien cuidadas. ¡Escapa del estrés diario y conéctate con la naturaleza!
+                </p>
+            </div>
+
+            <div class="cabecera-info">
+                <img th:src="@{/img/camping-caravanas.webp}" class="img-fluid img-cabecera-info img-derecha" alt="Ilustración sobre un camping de caravanas">
+                <p>
+                    Disfruta de la comodidad de tu hogar mientras te sumerges en la belleza de la naturaleza. Nuestras parcelas para autocaravanas y campers te ofrecen todo lo que necesitas para una estancia perfecta. 
+                    Con espacio, comodidad y la opción de explorar los alrededores a tu ritmo, tu estancia será inolvidable. Relájate sabiendo que cada detalle está pensado para que te sientas como en casa, 
+                    pero con la libertad de estar en el corazón de la naturaleza.
+                </p>
             </div>
         </div>
-    </div>
 
+        <div class="pie text-center mt-4">
+            <p>&copy; 2024 GuayraCamp. Todos los derechos reservados.</p>
+            <a href="mailto:info@guayracamp.es" class="text-decoration-none text-reset">info@guayracamp.es</a>
+            <p>928000000</p>
+        </div>
+        
+    </div>
 </body>
 
 </html>
