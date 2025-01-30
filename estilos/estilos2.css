@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+/* Estilos generales del contenedor menu-logo-login */
+.menu-logo-login {
+    width: 100%;
+    background-color: #c3beab;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    position: fixed !important;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de logo */
+.logo {
+    width: 10vh;
+}
+
+/* Estilos de menu */
+@media (max-width: 992px) {
+	.menu {
+		text-align: center !important;
+	}
+	
+	.navbar-brand {
+		margin-right: 0 !important;
+	}
+	
+	.menu a {
+		padding: 1vh 0;
+		margin: 0 !important;
+		font-size: 3.5vh !important;
+	}
+	
+	.lista-menu {
+		transition: none !important;
+	}
+	
+	.titulo-nav {
+		padding-left: 0 !important;
+	}
+	
+	.cabecera-info img {
+		width: 100%;
+		margin-bottom: 2vh;
+	}
+	
+	.cabecera-info p {
+		line-height: 1.6 !important;
+	}
+}
+
+.menu {
+    width: 100%;
+    padding-right: 1em;
+    justify-content: end;
+}
+
+.lista-menu {
+    font-size: 3vh !important;
+    color: #212529 !important;
+    margin-right: 1.2em !important;
+    position: relative;
+    display: inline-block;
+    transition: 0.5s ease;
+    
+}
+
+.lista-menu::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #212529;
+  transition: width 0.5s ease;
+  text-align: center !important;
+}
+
+.lista-menu:hover::after {
+  width: 100%;
+}
+
+.titulo-nav {
+	text-align: center;
+	padding-left: 1vh;
+	color: #212529;
+}
+
+/* Estilos de login */
+.login {
+    display: flex;
+    align-items: center;
+    margin-right: 5vh;
+}
+
+.enlace_area_personal a {
+    font-size: 3.5vh;
+    text-decoration: none;
+    color: azure;
+}
+
+ /* Estilos de contenido */
+ 
+ .contenido {
+	 width: 80%;
+	 margin:12vh auto 6vh auto;
+ }
+ /* Estilos de la cabecera principal */
+ 
+ .cabecera-info {
+	 width: fit-content;
+	 margin-top:6vh;
+	 display: inline-block;
+ }
+ .img-cabecera {
+	 border-radius: 10px;
+	 width: 60%;
+	 max-height: 500px;
+ }
+ 
+ .img-izquierda {
+	 margin-left: 2vh;
+	 float: right;
+ }
+ 
+  .img-derecha {
+	  margin-right: 2vh;
+	 float: left;
+ }
+ 
+ .cabecera-info p {
+	 color: #212529;
+	 font-size: 3vh;
+	 text-align: justify;
+	 hyphens: auto;
+	 line-height: 2em;
+ }
+
