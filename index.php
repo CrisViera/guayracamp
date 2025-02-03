@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include 'includes/header.php'; ?>
+<?php
+$titulo = "GuayraCamp";
+include 'includes/header.php'; 
+?>
 <body>
     <div class="contenedor">
 
