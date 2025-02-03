@@ -23,7 +23,7 @@ if(isset($_GET["codError"])) {
             <input type="password" name="password" placeholder="Contraseña" required>
             <?php if (!empty($error)) echo "<p class='text-danger'>$error</p>"; ?>
             <button type="submit">Acceder</button>
-            <p><a href="registrarse.php">¿No tienes cuenta? Regístrate aquí</a></p>
+            <p><a href="registro.php">¿No tienes cuenta? Regístrate aquí</a></p>
         </form>
     </div>
     
