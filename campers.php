@@ -2,9 +2,9 @@
 <html lang="en">
 <?php
 $titulo = "Campers";
+include 'includes/header.php';
 ?>
-<?php include 'includes/header.php'; ?>
-<body onload="actualizarPlazasCampers()">
+<body>
     <div class="contenedor">
 
         <?php include 'includes/menu.html'; ?>

@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Comprobamos si los campos no están vacíos y si el usuario está registrado
     if (!empty($email) && !empty($password)) {
         // Preparamos la consulta
-        $stmt = $conn->prepare("SELECT correo FROM usuarios WHERE correo = ?");
+        $stmt = $conn->prepare("SELECT correo, contrasena FROM usuarios WHERE correo = ?");
         // Enlazamos los parámetros
         $stmt->bind_param("s", $email);
         // Ejecutamos la consulta
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Comparar la contraseña
             if (password_verify($password, $contraseña_encryptada)) {
                 $_SESSION["correo"] = $correo;
-                header("Location: area_personal.php");
+                header("Location: espacio_personal/espacio_personal.php");
                 exit();
             } else {
                 header("Location: login.php?codError=2");

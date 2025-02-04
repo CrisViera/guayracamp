@@ -157,7 +157,7 @@ nav a:hover {
  /* Estilos del formulario de login y registro */
 .contenido_form {
 	width: 100%;
-	height: fit-content;
+	height: 100%;
 	margin: 0 auto;
 	background-image: url('../img/cabecera.png');
     background-position: center;
@@ -180,7 +180,6 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -195,10 +194,10 @@ nav a:hover {
 
 .form_Registro form {
 	background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
     border-radius: 8px;
-    max-width: 400px;
-    margin: 0 auto;
+    padding: 20px;
+    max-width: 50rem;
+    margin: 12rem auto 0;
     color: white;
 }
 
@@ -207,9 +206,16 @@ form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    border: #ad8a39 !important;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form input:focus {
+    border-color: #ad8a39 !important;
+    box-shadow: inset 1px 1px 8px rgba(173, 138, 57, 0.6) !important;
+    outline: none !important;
 }
 
 form button {

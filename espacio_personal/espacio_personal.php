@@ -5,16 +5,27 @@ if (!isset($_SESSION["correo"])) {
     header("Location: login.php");
     exit();
 }
+
+$correo = $_SESSION["correo"];
+include "BBDD_data/datosUsuario.php";
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Área personal</title>
-</head>
+<?php
+include 'includes/header.php';
+?>
 <body>
-    <h2>Bienvenido Pepe</h2>
-    <p><a href="logout.php">Cerrar sesión</a></p>
+    <div class="contenedor">
+
+        <?php include 'includes/menu.html'; ?>
+
+        <div class="cabecera">
+
+        </div>
+
+        <h1>Bienvenido <?php echo $nombre; ?></h1>
+        <?php include 'includes/footer.html'; ?>
+    </div>
 </body>
 </html>
