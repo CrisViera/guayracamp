@@ -157,8 +157,8 @@ nav a:hover {
  /* Estilos del formulario de login y registro */
 .contenido_form {
 	width: 100%;
-	height: 100%;
 	margin: 0 auto;
+    padding-bottom: 3rem;
 	background-image: url('../img/cabecera.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -179,7 +179,6 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     box-sizing: border-box;
 }
 
