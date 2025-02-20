@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$titulo = "Autocaravanas";
+$titulo = "Espacio personal";
+include 'includes/header.php';
 ?>
-<?php include 'includes/header.php'; ?>
 <body>
     <div class="contenedor">
 
@@ -19,7 +19,7 @@ $titulo = "Autocaravanas";
             </div>
         </div>
 
-        <?php include 'views/autocaravanas.php'; ?>
+        <?php include 'views/personalSpace.php'; ?>
         <?php include 'includes/footer.html'; ?>
     </div>
 </body>
