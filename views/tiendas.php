@@ -15,6 +15,9 @@ include 'BBDD_data/tiendas_total_places.php';
             <p>
                  La zona está rodeada de un ambiente tranquilo y seguro, ofreciendo todo lo necesario para que disfrutes de tu estancia con comodidad y sin preocupaciones.
             </p>
+            <p>
+                 La zona dispone de 30 plazas con un máximo 1 tienda de campaña por plaza y un 4 personas por tienda por motivos de cupo.
+            </p>
             <p>Plazas disponibles: <?php echo $tiendas_total_places; ?></p>
             <h1 class="text-center mb-5">¿Que ofrecemos?</h1>
             <ul>

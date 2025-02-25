@@ -26,7 +26,8 @@ if ($stmt->fetch()) {
     $telefono = $phone;
     $_SESSION['id_user'] = $id_user;
 } else {
-    die("Error: No se encontró un usuario con ese correo.");
+    session_destroy();
+    header("Location: login.php");
 }
 
 // Cerramos la consulta

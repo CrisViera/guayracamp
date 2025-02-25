@@ -1,4 +1,10 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 include "BBDD_connection/connection.php";
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
@@ -59,18 +65,50 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 );
         // Ejecutamos la consulta
         if ($stmt->execute()) {
-            session_start();
-            $_SESSION["email"] = $campos['email'];
-            header("Location: personal_space.php");
-            exit;
-        } else {
-            die("Error al ejecutar la consulta: " . $stmt->error);
-        }
+            // Generar un correo de confirmación
+            $mail = new PHPMailer(true);
+
+            try {
+                
+                $mail->isSMTP();
+                $mail->Host       = 'smtp.gmail.com'; 
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'proyectoswebgc@gmail.com'; 
+                $mail->Password   = 'vylf fnoy ocgf ntsz'; 
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                $mail->Port       = 587;
+
+                // Configuración del remitente y destinatario
+                $mail->setFrom('guayracamp@gmail.com', 'Registro GuayraCamp'); 
+                $mail->addAddress($campos['email']);
+
+                // Configuración del correo
+                $mail->isHTML(true);
+                $mail->Subject = 'Registro GuayraCamp';
+                $mail->Body    = "<h3>¡Bienvenido a GuayraCamp!</h3>
+                                <p>Gracias por registrarte en nuestra plataforma.</p>
+                                <p>Recuerda que para poder reservar, tu usuario es " . $campos['email'] . "</p>
+                                <p>Esperamos que disfrutes de tu estancia en nuestro camping.</p>
+                                <p>Cualquier duda no dudes en contactar es clientes@guayracamp.es</p>";
+
+                // Enviar el correo y si todo sale bien, redirigir al espacio personal
+                if ($mail->send()) {
+                    session_start();
+                    $_SESSION['email'] = $campos['email'];
+                    header("Location: personal_space.php?success");
+                    exit();
+                } else {
+                    echo "<script>alert('Error al enviar el correo de confirmación.');</script>";
+                }
+                return true;
+            } catch (Exception $e) {
+                return false;
+            }
     
         // Cerramos la conexión
         $stmt->close();
         $conn->close();
-    
+    }
 
 }
 ?>

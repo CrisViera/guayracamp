@@ -26,6 +26,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->fetch();
             // Comparar la contraseña
             if (password_verify($password, $contraseña_encryptada)) {
+                // Si el correo introducido es de administrador, redirije a la vista administration.php
+                if($correo === "admin@guayracamp.es") {
+                    session_start();
+                    $_SESSION["email"] = $correo;
+                    header("Location: administration.php");
+                    exit();
+                }
+                session_start();
                 $_SESSION["email"] = $correo;
                 $_SESSION["id_user"] = $id_user;
                 header("Location: personal_space.php");

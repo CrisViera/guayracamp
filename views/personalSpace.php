@@ -1,4 +1,5 @@
 <?php
+session_start();
 $total = 0;
 if (!isset($_SESSION["email"])) {
     header("Location: login.php");
@@ -9,6 +10,7 @@ $correo = $_SESSION["email"];
 // Incluye la obtención de datos del usuario y reservas
 include "BBDD_data/userData.php";
 include "BBDD_data/reservationData.php";
+include "includes/errorReservationMessages.php";
 ?>
 <div class="contenido">
     <div class="container mt-5">
@@ -91,6 +93,7 @@ include "BBDD_data/reservationData.php";
                             ?>
                             </tbody>
                         </table>
+                        <?php if (!empty($error)) echo "<p class='text-danger'>$error</p>"; ?>
                     </div>
                         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalReserva">Nueva Reserva</button>
                     </div>

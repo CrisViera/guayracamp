@@ -1,6 +1,6 @@
 <?php
 include "includes/errorLoginMessages.php";
-
+session_start();
 if(isset($_GET["codError"])) {
     $codError = (int) $_GET["codError"];
     if(isset($MensajesError[$codError])) {
@@ -8,6 +8,12 @@ if(isset($_GET["codError"])) {
     } else {
         $error = "Error desconocido.";
     }
+}
+
+if(isset($_SESSION["email"])) {
+    header("Location: personal_space.php");
+}elseif(isset($_SESSION["email"]) && $_SESSION["email"] === 'admin@guayracamp.es'){
+    header("Location: administration.php");
 }
 ?>
 <div class="contenido_form">

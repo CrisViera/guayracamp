@@ -324,6 +324,16 @@ a:hover {
     padding: 0.3rem 0.8rem;
 }
 
+.administration .row {
+    flex-direction: column !important;
+}
+
+.administration .col-md-4 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+}
+
+
 .table {
     font-size: 0.9rem;
 }
