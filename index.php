@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-$titulo = "GuayraCamp";
+$titulo = "GuayraCamp - EcoExperience";
 include 'includes/header.php'; 
 ?>
 <body>
@@ -14,6 +14,7 @@ include 'includes/header.php';
                 <div class="slide"><img src="img/slide1.jpg" alt="Camping 1"></div>
                 <div class="slide"><img src="img/slide2.jpg" alt="Camping 2"></div>
                 <div class="slide"><img src="img/slide3.jpg" alt="Camping 3"></div>
+                <div class="slide"><img src="img/slide4.jpeg" alt="Camping 4"></div>
             </div>
         </div>
 
